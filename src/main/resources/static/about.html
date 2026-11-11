@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="js/auth.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tunza by Shaz – About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Liu+Jian+Mao+Cao&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tunza.css">
+</head>
+<body>
+<div class="tz-page">
+
+  <header class="tz-header">
+    <a href="index.html" class="tz-header__logo" aria-label="Tunza – home"><img src="images/logo.png" alt=""></a>
+    <nav class="tz-nav" aria-label="Site">
+      <a href="about.html" aria-current="page">About</a>
+      <a href="lookbook.html">Lookbook</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+
+  <img class="about-banner" src="images/about-fabric-banner.jpg" alt="" aria-hidden="true">
+
+  <main class="about-main">
+
+    <!-- Our story -->
+    <section class="about-section">
+      <div class="about-section__media">
+        <img class="about-section__img" src="images/about-story.jpg" alt="Model in a black hoodie with patterned cuffs against a deep red backdrop">
+        <p class="about-script-caption">with care</p>
+      </div>
+      <div class="about-section__text">
+        <h1 class="tz-heading">Our story</h1>
+        <div class="tz-prose">
+          <p>Tunza by Shaz is clothing made to be worn, loved, and lived in.</p>
+          <p>Every piece starts from fabric that already exists: deadstock cotton or linen, vibrant Ankara/Kitenge, and textile waste that would otherwise go unused. We turn it into designs with personality, shape, and attitude.</p>
+          <p>My pieces are designed to move with you. Waistbands adjust, cuts forgive, and silhouettes stay flattering whether your body is having a good day, a bloated day, or a different season of life altogether. Clothes should fit the person you are right now, you shouldn’t fit the clothes.</p>
+          <p>Everything is made in small batches in Kenya by skilled hands, and released as preorders and made-to-order collections. That means less waste, no overproduction, and pieces made with care instead of in bulk.</p>
+          <p>Tunza is Swahili for to care for, to cherish. That’s the whole idea: care for the people who make the clothes, for the materials, and for the person wearing them.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Shaz -->
+    <section class="about-section about-section--reverse">
+      <div class="about-section__text">
+        <h2 class="tz-heading about-heading-shaz">About <span>Shaz</span></h2>
+        <div class="tz-prose">
+          <p>Hey you, I’m Shaz, the designer behind Tunza. I’m half Danish and half Kenyan, raised in Kenya and now based in Copenhagen. I grew up between two worlds, and that mix shows up in everything I make: bold prints and clean lines, warmth and restraint, Nairobi color and Scandinavian ease, a fusion of comfort and style.</p>
+          <p>I started Tunza because I wanted clothes that felt like me: expressive, comfortable, and adjustable enough to keep up with real life. I couldn’t find them the way I wanted them, so I started making them. What began as custom designed hair accessories and one-of-a-kind design pieces has grown into a designer-led clothing brand, with each collection made in Kenya from materials that already exist.</p>
+          <p>I believe good fashion doesn’t need a lecture. It needs great design, good fit, and a story you’re proud to wear. Thank you for being part of mine.</p>
+        </div>
+      </div>
+      <img class="about-section__img" src="images/about-shaz.jpg" alt="Shaz, the designer, seated in an off-shoulder top and printed trousers">
+    </section>
+  </main>
+
+  <!-- Atelier carousel: endless slide to the left, pauses on hover.
+       The image set is repeated by script so the loop is seamless. -->
+  <section class="tz-marquee-section" aria-label="In the atelier">
+    <div class="tz-marquee">
+      <div class="tz-track" id="atelier-track">
+        <img src="images/atelier-1.jpg" alt="Designer draping a black and white dress on a mannequin">
+        <img src="images/atelier-2.jpg" alt="Designer at a sewing machine with patterned fabric">
+        <img src="images/atelier-3.jpg" alt="Designer cutting printed fabric at a work table">
+        <img src="images/atelier-4.jpg" alt="Two models on escalators wearing high-waisted patterned trousers">
+      </div>
+    </div>
+  </section>
+
+  <footer class="tz-footer">
+    <div class="tz-footer__contact">
+      <p class="tz-footer__name">SHARON SVARRER</p>
+      <a class="tz-footer__email" href="mailto:hello@tunzabyshaz.com">hello@tunzabyshaz.com</a>
+    </div>
+    <div class="tz-footer__phone-wrap">
+      <a class="tz-footer__phone" href="tel:+456528463">+45 6528463</a>
+    </div>
+    <div class="tz-footer__social">
+      <a href="#" aria-label="Instagram">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg>
+      </a>
+      <a href="#" aria-label="LinkedIn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10v9"></path><path d="M5 5.5v0.01"></path><path d="M10 19v-9"></path><path d="M10 13.5c0-2 1.5-3.5 3.5-3.5S17 11.5 17 13.5V19"></path></svg>
+      </a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Repeat the atelier photos (as decorative copies) so the track is twice as
+  // wide as needed – the CSS animation slides it by -50% and loops seamlessly.
+  (function () {
+    var track = document.getElementById('atelier-track');
+    var originals = Array.prototype.slice.call(track.children);
+    for (var i = 0; i < 3; i++) {
+      originals.forEach(function (img) {
+        var copy = img.cloneNode();
+        copy.alt = '';
+        copy.setAttribute('aria-hidden', 'true');
+        track.appendChild(copy);
+      });
+    }
+  })();
+</script>
+</body>
+</html>
