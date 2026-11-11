@@ -8,7 +8,7 @@
  * Changing it also logs everyone out.
  */
 (function () {
-  var PASSWORD_HASH = '185267883b52fc0d774a032d555d0c772d72a80e8fe16e6755bc046ec13a4806';
+  var PASSWORD_HASH = 'd48aabfadc928e601b0215acd5db24eee7ae0c3e939447f62a02a88b0517e208';
   var STORAGE_KEY = 'tunza-auth';
 
   function isLoggedIn() {
