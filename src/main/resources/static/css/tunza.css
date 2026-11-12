@@ -115,7 +115,6 @@ a:hover { color: var(--tz-wine); }
   display: flex; gap: 24px; width: max-content; padding-right: 24px;
   animation: tz-slide 68s linear infinite; will-change: transform;
 }
-.tz-marquee:hover .tz-track { animation-play-state: paused; }
 .tz-track img { flex: 0 0 auto; width: 400px; height: 300px; object-fit: cover; display: block; }
 @media (prefers-reduced-motion: reduce) { .tz-track { animation-duration: 120s; } }
 
