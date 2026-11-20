@@ -148,5 +148,20 @@
     update();
   })();
 </script>
+<!-- GoatCounter: privacy-friendly visit counting (no cookies). Dashboard: https://miso0007.goatcounter.com -->
+<script>
+  // Record each page without the utm_… tags, so /shop.html and /shop.html?utm_source=instagram
+  // count as the same page. GoatCounter still reads the tags to show Instagram as the source.
+  window.goatcounter = {
+    path: function (p) {
+      var url = new URL(p, location.origin);
+      Array.from(url.searchParams.keys()).forEach(function (k) {
+        if (/^utm_/.test(k)) url.searchParams.delete(k);
+      });
+      return url.pathname + url.search;
+    }
+  };
+</script>
+<script data-goatcounter="https://miso0007.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
