@@ -98,7 +98,7 @@
     var hero = document.getElementById('hero-logo-box'); // never moves: the logo's natural spot
     var logo = document.getElementById('hero-logo');     // the image that moves
     var slot = document.getElementById('logo-slot');     // the small logo spot in the top bar
-    var raf = 0, pinned = null;
+    var raf = 0, pinned = null, landed = false;
 
     function update() {
       var h = hero.getBoundingClientRect();
@@ -143,6 +143,16 @@
         dx -= h.left; dy -= h.top;
       }
       logo.style.transform = 'translate3d(' + dx.toFixed(2) + 'px,' + dy.toFixed(2) + 'px,0) scale(' + k.toFixed(4) + ')';
+
+      // Once it has fully landed, hand over to the top bar's own logo (same size, same
+      // spot). It then moves with the bar like on the other pages, e.g. when the page
+      // bounces at the very end, instead of staying pinned while the bar moves.
+      var nowLanded = e >= 1 && gap + land <= 0;
+      if (nowLanded !== landed) {
+        landed = nowLanded;
+        slot.style.opacity = landed ? '1' : '';
+        logo.style.visibility = landed ? 'hidden' : '';
+      }
     }
 
     function onScroll() {
