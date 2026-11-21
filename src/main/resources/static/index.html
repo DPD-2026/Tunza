@@ -109,7 +109,7 @@
       // over 2 x `land` px of scrolling instead of stopping abruptly.
       var gap = h.top - s.top;                 // > 0 while still below the bar line
       var scrolled = (document.scrollingElement || document.documentElement).scrollTop;
-      var land = Math.max(40, Math.min(200, gap + scrolled));
+      var land = Math.max(40, Math.min(400, gap + scrolled));
       var t = Math.max(0, Math.min(1, (gap + land) / (2 * land)));
       var y = gap >= land ? h.top : s.top + 2 * land * (t * t * t - t * t * t * t / 2);
 
@@ -117,7 +117,12 @@
       // On narrow screens it must be small by the time it lands, or it covers the menu,
       // so it shrinks gradually from where it starts (at the top of the page) to the bar.
       var narrow = window.innerWidth <= 760;
-      var lead = narrow ? Math.max(1, gap + scrolled) : 160, slide = narrow ? 0 : 1000;
+      // On wide screens the glide is spread over up to 2000px of scrolling so it moves
+      // slowly, but always finishes a little before the bottom of the page.
+      var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      var room = maxScroll - 250 - (gap + scrolled);
+      var lead = narrow ? Math.max(1, gap + scrolled) : 300;
+      var slide = narrow ? 0 : Math.max(300, Math.min(2000, room));
       var p = Math.max(0, Math.min(1, (lead - gap) / (lead + slide)));
       var e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;  // ease in-out
       var k = 1 + e * (s.height / h.height - 1);  // ends as tall as the top bar logo
