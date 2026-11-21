@@ -6,8 +6,8 @@
   <title>Tunza by Shaz – Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Liu+Jian+Mao+Cao&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/tunza.css?v=8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tunza.css?v=10">
 </head>
 <body>
 <div class="tz-page">
@@ -36,12 +36,12 @@
     <!-- Made to be different: handwritten heading over the left part of the photo -->
     <section class="home-different">
       <h2 class="home-different__title"><img src="images/made-to-be-different.svg" alt="Made to be different."></h2>
-      <img class="home-different__img" src="images/home-different.jpg" alt="Model sitting on the floor in a black sweatshirt and wide black and white patterned trousers">
+      <img class="home-different__img" loading="lazy" decoding="async" src="images/home-different.jpg" alt="Model sitting on the floor in a black sweatshirt and wide black and white patterned trousers">
     </section>
 
     <!-- Story: close-up photo on the left, text on the right -->
     <section class="home-story">
-      <img class="home-story__img" src="images/shop-top-closeup.jpg" alt="Close-up of a black Tunza top with a patterned neckline">
+      <img class="home-story__img" loading="lazy" decoding="async" src="images/shop-top-closeup.jpg" alt="Close-up of a black Tunza top with a patterned neckline">
       <div class="tz-prose home-story__text">
         <p>At TUNZA, we believe that fashion deserves a second chance. What others see as waste, we see as an opportunity to create something extraordinary. Inspired by the growing problem of textile waste in Kenya, we are rethinking the way fashion is created, transforming discarded clothing into bold, unique, one-of-a-kind pieces.</p>
         <p>Our journey begins with forgotten garments and fabrics that would otherwise be left behind. Instead of letting these materials go to waste, we give them a new purpose. Through upcycling, creativity and local craftsmanship, discarded textiles are carefully reworked into new designs that combine expressive silhouettes, distinctive patterns and individuality.</p>
@@ -64,20 +64,20 @@
   </section>
 
   <footer class="tz-footer">
-    <div class="tz-footer__contact">
-      <p class="tz-footer__name">SHARON SVARRER</p>
-      <a class="tz-footer__email" href="mailto:hello@tunzabyshaz.com">hello@tunzabyshaz.com</a>
-    </div>
-    <div class="tz-footer__phone-wrap">
-      <span class="tz-footer__phone">+45 22 53 70 42</span>
-    </div>
-    <div class="tz-footer__social">
-      <a href="https://www.instagram.com/tunza_byshaz/" target="_blank" rel="noopener" aria-label="Tunza on Instagram">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg>
-      </a>
-      <a href="https://www.linkedin.com/company/tunza-by-shaz/" target="_blank" rel="noopener" aria-label="Tunza on LinkedIn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10v9"></path><path d="M5 5.5v0.01"></path><path d="M10 19v-9"></path><path d="M10 13.5c0-2 1.5-3.5 3.5-3.5S17 11.5 17 13.5V19"></path></svg>
-      </a>
+    <div class="tz-footer__group">
+      <div class="tz-footer__contact">
+        <p class="tz-footer__name">SHARON SVARRER</p>
+        <a class="tz-footer__email" href="mailto:hello@tunzabyshaz.com">hello@tunzabyshaz.com</a>
+      </div>
+      <img class="tz-footer__phone" src="images/footer-phone.png" width="864" height="178" alt="Phone: +45 22 53 70 42" loading="lazy" decoding="async">
+      <div class="tz-footer__social">
+        <a href="https://www.instagram.com/tunza_byshaz/" target="_blank" rel="noopener" aria-label="Tunza on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/tunza-by-shaz/" target="_blank" rel="noopener" aria-label="Tunza on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="4.6" cy="4.4" r="2.4"></circle><rect x="2.6" y="8.4" width="4" height="13.1"></rect><path d="M9.4 8.4h3.8v1.8c.6-1.1 2.1-2.1 4.1-2.1 3.4 0 4.3 2.2 4.3 5.4v8h-4v-7c0-1.7-.4-2.9-2-2.9-1.7 0-2.2 1.3-2.2 3v6.9h-4z"></path></svg>
+        </a>
+      </div>
     </div>
   </footer>
 </div>
@@ -114,9 +114,10 @@
       var y = gap >= land ? h.top : s.top + 2 * land * (t * t * t - t * t * t * t / 2);
 
       // Horizontal + size: starts a little before it reaches the bar, glides left.
-      // On narrow screens it must be small by the time it lands, or it covers the menu.
+      // On narrow screens it must be small by the time it lands, or it covers the menu,
+      // so it shrinks gradually from where it starts (at the top of the page) to the bar.
       var narrow = window.innerWidth <= 760;
-      var lead = narrow ? 500 : 160, slide = narrow ? 0 : 1000;
+      var lead = narrow ? Math.max(1, gap + scrolled) : 160, slide = narrow ? 0 : 1000;
       var p = Math.max(0, Math.min(1, (lead - gap) / (lead + slide)));
       var e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;  // ease in-out
       var k = 1 + e * (s.height / h.height - 1);  // ends as tall as the top bar logo
@@ -143,6 +144,8 @@
       if (!raf) raf = requestAnimationFrame(function () { raf = 0; update(); });
     }
     document.addEventListener('scroll', onScroll, { capture: true, passive: true });
+    // One last update when scrolling stops, so a fast fling always ends with the logo in place
+    window.addEventListener('scrollend', function () { update(); });
     window.addEventListener('resize', onScroll);
     window.addEventListener('load', update);
     update();
