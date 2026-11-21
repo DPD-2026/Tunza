@@ -34,19 +34,22 @@ a:hover { color: var(--tz-wine); }
   background: var(--tz-bg);
   box-shadow: 0 0 0 100vmax var(--tz-bg);
   clip-path: inset(0 -100vmax);
-  max-width: 1440px; margin: 0 auto;
-  padding: 12px var(--tz-gutter);
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px;
+  max-width: 1512px; margin: 0 auto; box-sizing: border-box;
+  /* As in the design: logo 99px from the left, menu ending 100px from the right */
+  padding: clamp(10px, 2.2vw, 32px) clamp(16px, 6.6vw, 100px);
+  /* Logo and menu always stay on one line, the menu to the right of the logo */
+  display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 12px;
 }
-.tz-header__logo { display: inline-block; line-height: 0; }
-.tz-header__logo img { height: clamp(34px, 3.4vw, 50px); width: auto; display: block; }
+.tz-header__logo { display: inline-block; line-height: 0; flex: none; }
+.tz-header__logo img { height: clamp(28px, 3.4vw, 50px); width: auto; display: block; }
 .tz-nav {
-  display: flex; flex-wrap: wrap; gap: 0 clamp(20px, 6vw, 96px);
-  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  display: flex; flex-wrap: nowrap; white-space: nowrap;
+  gap: 0 clamp(12px, 9.1vw, 138px);
+  font-size: clamp(12px, 1.32vw, 20px); text-transform: uppercase;
 }
 /* Each menu link is at least 44px tall so it's easy to tap on a phone */
-.tz-nav a { display: inline-flex; align-items: center; min-height: 44px; }
-.tz-nav a[aria-current="page"] { color: var(--tz-wine); font-weight: 600; }
+.tz-nav a { display: inline-flex; align-items: center; min-height: 44px; color: var(--tz-wine); }
+/* The current page is marked for screen readers only; the design shows all links the same */
 
 /* ---------- Footer ---------- */
 /* Laid out as in the design: name and email, the handwritten phone number rising
@@ -251,6 +254,7 @@ a:hover { color: var(--tz-wine); }
    Body text is kept at 12px so it stays readable. */
 @media (max-width: 760px) {
   /* Shared */
+  .tz-nav { gap: 0 max(12px, 4vw); }
   .tz-heading { font-size: max(20px, 5.5vw); }
   .tz-prose, .shop-product__details, .lookbook-intro__text { font-size: 12px; line-height: 1.5; }
   .tz-prose { gap: 8px; }
