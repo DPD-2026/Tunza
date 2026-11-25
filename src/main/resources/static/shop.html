@@ -6,14 +6,14 @@
   <title>Tunza by Shaz – Shop</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/tunza.css?v=11">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Liu+Jian+Mao+Cao&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tunza.css?v=2">
 </head>
 <body>
 <div class="tz-page">
 
   <header class="tz-header">
-    <a href="index.html" class="tz-header__logo" aria-label="Tunza – home"><img src="images/logo.svg" alt=""></a>
+    <a href="index.html" class="tz-header__logo" aria-label="Tunza – home"><img src="images/logo.png" alt=""></a>
     <nav class="tz-nav" aria-label="Site">
       <a href="about.html">About</a>
       <a href="lookbook.html">Lookbook</a>
@@ -21,106 +21,81 @@
     </nav>
   </header>
 
-  <!-- Shop: each product has a row of photos (scrolls sideways when it runs past the edge),
-       with the add-to-cart button and the description underneath -->
-  <main class="shop-main">
-    <h1 class="sr-only">Shop</h1>
+  <main class="product-main">
+    <a href="lookbook.html" class="product-back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>
+      Back
+    </a>
 
-    <section class="shop-product" id="reworked-top" aria-labelledby="reworked-top-name">
-      <div class="shop-product__photos" tabindex="0" aria-label="Photos of The Reworked Top">
-        <img src="images/shop-top-1.jpg" alt="Model leaning forward in the black sleeveless Reworked Top with wide-leg jeans">
-        <img src="images/shop-top-2.jpg" alt="The Reworked Top from the back, showing the patterned collar and tie belt" loading="lazy" decoding="async">
-        <img src="images/shop-top-3.jpg" alt="Model with her hands behind her head in the Reworked Top and wide-leg jeans" loading="lazy" decoding="async">
-        <img src="images/shop-top-closeup.jpg" alt="Close-up of the Reworked Top's patterned neckline" loading="lazy" decoding="async">
+    <section class="product">
+      <div class="product__left">
+        <!-- Gallery: click a thumbnail to show it large -->
+        <div class="product__gallery">
+          <img class="product__main-img" id="product-main-img" src="images/product-back.png" alt="Hoodie and wide-leg trousers, back view">
+          <div class="product__thumbs" role="group" aria-label="Product photos">
+            <button type="button" class="product__thumb" aria-pressed="true" aria-label="Show back view"
+                    data-src="images/product-back.png" data-alt="Hoodie and wide-leg trousers, back view">
+              <img src="images/product-back.png" alt="">
+            </button>
+            <button type="button" class="product__thumb" aria-pressed="false" aria-label="Show side view"
+                    data-src="images/product-side.png" data-alt="Hoodie and wide-leg trousers, side view">
+              <img src="images/product-side.png" alt="">
+            </button>
+            <button type="button" class="product__thumb" aria-pressed="false" aria-label="Show trousers laid flat"
+                    data-src="images/product-flat.png" data-alt="Wide-leg trousers laid flat">
+              <img src="images/product-flat.png" alt="">
+            </button>
+          </div>
+        </div>
+
+        <div class="product__info">
+          <button type="button" class="product__cart-btn">Add to cart</button>
+          <div class="product__details">
+            <h1 class="product__name">Trousers</h1>
+            <p class="product__desc">Wide-leg trousers combining black fabric with striking geometric patterns. Relaxed, expressive and anything but ordinary.</p>
+          </div>
+        </div>
       </div>
-      <button type="button" class="product__cart-btn shop-product__cart">Add to cart</button>
-      <div class="shop-product__details">
-        <h2 class="shop-product__name" id="reworked-top-name">THE REWORKED TOP</h2>
-        <p>Bold, effortless and anything but ordinary.</p>
-        <p>This one-of-a-kind top combines a striking silhouette with unique details, turning a simple wardrobe essential into a statement piece. Crafted from repurposed textiles, it reflects TUNZA’s vision of giving forgotten materials a new purpose.</p>
-        <p>Designed to celebrate individuality and creativity, this piece proves that conscious fashion doesn’t have to compromise on style.</p>
-      </div>
+      <img class="product__model-img" src="images/product-model.jpg" alt="Model wearing the hoodie and geometric wide-leg trousers">
     </section>
 
-    <section class="shop-product" id="reworked-shirt" aria-labelledby="reworked-shirt-name">
-      <div class="shop-product__photos" tabindex="0" aria-label="Photos of The Reworked Shirt">
-        <img src="images/shop-shirt-1.jpg" alt="Model in the black Reworked Shirt with colourful patterned ties, worn with wide-leg jeans">
-        <img src="images/shop-shirt-2.jpg" alt="Close-up of the Reworked Shirt's patterned ties, collar and sleeve trim" loading="lazy" decoding="async">
-        <img src="images/shop-shirt-3.jpg" alt="Model lying on the floor propped on one arm in the Reworked Shirt, jeans and black boots" loading="lazy" decoding="async">
-      </div>
-      <button type="button" class="product__cart-btn shop-product__cart">Add to cart</button>
-      <div class="shop-product__details">
-        <h2 class="shop-product__name" id="reworked-shirt-name">THE REWORKED SHIRT</h2>
-        <p>A classic silhouette with an unexpected twist.</p>
-        <p>This one-of-a-kind shirt combines a relaxed fit with vibrant patterned details, transforming a timeless wardrobe essential into a bold statement piece. The colorful accents along the collar, sleeves and front add a playful contrast to the dark fabric, creating a look that feels both effortless and expressive.</p>
-        <p>Crafted from repurposed textiles, this design reflects TUNZA’s commitment to creativity, individuality and giving existing materials a second life.</p>
-        <p>Reworked with purpose. Designed to stand out.</p>
-      </div>
-    </section>
-
-    <section class="shop-product" id="reworked-dress" aria-labelledby="reworked-dress-name">
-      <div class="shop-product__photos" tabindex="0" aria-label="Photos of The Reworked Dress">
-        <img src="images/shop-dress-1.jpg" alt="Model with one knee raised in the Reworked Dress and knee-high black boots">
-        <img src="images/shop-dress-detail.jpg" alt="Close-up of the Reworked Dress's gold fish print and black fringe hem" loading="lazy" decoding="async">
-      </div>
-      <button type="button" class="product__cart-btn shop-product__cart">Add to cart</button>
-      <div class="shop-product__details">
-        <h2 class="shop-product__name" id="reworked-dress-name">THE REWORKED DRESS</h2>
-        <p>Playful, bold and made to move.</p>
-        <p>This one-of-a-kind dress combines a relaxed, sleeveless silhouette with a striking golden print and a fringe hem that sways with every step. Panels of plain black fabric balance the pattern, turning a simple shape into a true statement piece.</p>
-        <p>Crafted from repurposed textiles, this design reflects TUNZA’s vision of giving forgotten materials a new purpose and celebrating individuality in every detail.</p>
-        <p>Reworked with purpose. Made to be noticed.</p>
-      </div>
+    <section class="product-editorial">
+      <img src="images/product-editorial.jpg" alt="Model seated on a wooden chair in a garden, wearing the hoodie and trousers">
     </section>
   </main>
 
   <footer class="tz-footer">
-    <div class="tz-footer__group">
-      <div class="tz-footer__contact">
-        <p class="tz-footer__name">SHARON SVARRER</p>
-        <a class="tz-footer__email" href="mailto:hello@tunzabyshaz.com">hello@tunzabyshaz.com</a>
-      </div>
-      <img class="tz-footer__phone" src="images/footer-phone.png" width="864" height="178" alt="Phone: +45 22 53 70 42" loading="lazy" decoding="async">
-      <div class="tz-footer__social">
-        <a href="https://www.instagram.com/tunza_byshaz/" target="_blank" rel="noopener" aria-label="Tunza on Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/tunza-by-shaz/" target="_blank" rel="noopener" aria-label="Tunza on LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="4.6" cy="4.4" r="2.4"></circle><rect x="2.6" y="8.4" width="4" height="13.1"></rect><path d="M9.4 8.4h3.8v1.8c.6-1.1 2.1-2.1 4.1-2.1 3.4 0 4.3 2.2 4.3 5.4v8h-4v-7c0-1.7-.4-2.9-2-2.9-1.7 0-2.2 1.3-2.2 3v6.9h-4z"></path></svg>
-        </a>
-      </div>
+    <div class="tz-footer__contact">
+      <p class="tz-footer__name">SHARON SVARRER</p>
+      <a class="tz-footer__email" href="mailto:hello@tunzabyshaz.com">hello@tunzabyshaz.com</a>
+    </div>
+    <div class="tz-footer__phone-wrap">
+      <span class="tz-footer__phone">+45 6528463</span>
+    </div>
+    <div class="tz-footer__social">
+      <a href="#" aria-label="Instagram">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg>
+      </a>
+      <a href="#" aria-label="LinkedIn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10v9"></path><path d="M5 5.5v0.01"></path><path d="M10 19v-9"></path><path d="M10 13.5c0-2 1.5-3.5 3.5-3.5S17 11.5 17 13.5V19"></path></svg>
+      </a>
     </div>
   </footer>
 </div>
 
 <script>
-  // Coming from the Lookbook, the link names one product (shop.html?item=reworked-top):
-  // show only that product. Without an item (the Shop link in the menu) every product shows.
+  // Product gallery: clicking a thumbnail shows that photo large.
   (function () {
-    var item = new URLSearchParams(location.search).get('item');
-    var chosen = item && document.getElementById(item);
-    if (!chosen || !chosen.classList.contains('shop-product')) return;
-    document.querySelectorAll('.shop-product').forEach(function (p) {
-      p.hidden = p !== chosen;
+    var main = document.getElementById('product-main-img');
+    var thumbs = document.querySelectorAll('.product__thumb');
+    thumbs.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        main.src = btn.dataset.src;
+        main.alt = btn.dataset.alt;
+        thumbs.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      });
     });
-    var name = chosen.querySelector('.shop-product__name');
-    if (name) document.title = 'Tunza by Shaz – ' + name.textContent.trim().toLowerCase().replace(/\b\w/g, function (c) { return c.toUpperCase(); });
   })();
 </script>
-<!-- GoatCounter: privacy-friendly visit counting (no cookies). Dashboard: https://miso0007.goatcounter.com -->
-<script>
-  // Record each page without the utm_… tags, so /shop.html and /shop.html?utm_source=instagram
-  // count as the same page. GoatCounter still reads the tags to show Instagram as the source.
-  window.goatcounter = {
-    path: function (p) {
-      var url = new URL(p, location.origin);
-      Array.from(url.searchParams.keys()).forEach(function (k) {
-        if (/^utm_/.test(k)) url.searchParams.delete(k);
-      });
-      return url.pathname + url.search;
-    }
-  };
-</script>
-<script data-goatcounter="https://miso0007.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
